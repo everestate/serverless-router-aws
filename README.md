@@ -1,6 +1,6 @@
 # @everestate/serverless-router-plugin-dynamodb
 
-> Serverless Router plugin to handle AWS DynamoDB stream events
+> [Serverless Router](https://github.com/everestate/serverless-router) plugin to handle AWS DynamoDB stream events
 
 ## Installation
 
