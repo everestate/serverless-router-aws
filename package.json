@@ -1,0 +1,43 @@
+{
+  "name": "@everestate/serverless-router-plugin-dynamodb",
+  "version": "0.0.1",
+  "description": "Serverless Router plugin to handle AWS DynamoDB stream events",
+  "keywords": [
+    "serverless",
+    "lambda",
+    "routing",
+    "router",
+    "route",
+    "dynamodb",
+    "streaming"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --verbose",
+    "coverage": "jest --coverage --no-cache"
+  },
+  "engines": {
+    "node": ">=8.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:everestate/serverless-router-plugin-dynamodb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/everestate/serverless-router-plugin-dynamodb/issues"
+  },
+  "author": "Everestate",
+  "license": "MIT",
+  "dependencies": {
+    "@everestate/serverless-router": ">=0.1.0 <1.0.0",
+    "aws-sdk": ">=2.0.0 <3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jest": "^21.15.2",
+    "jest": "^23.1.0"
+  }
+}
