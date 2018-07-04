@@ -1,6 +1,6 @@
 {
   "name": "@everestate/serverless-router-plugin-dynamodb",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Serverless Router plugin to handle AWS DynamoDB stream events",
   "keywords": [
     "serverless",
