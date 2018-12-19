@@ -31,7 +31,8 @@
   "license": "MIT",
   "dependencies": {
     "@everestate/serverless-router": ">=0.3.0",
-    "aws-sdk": ">=2.0.0 <3.0.0"
+    "aws-sdk": ">=2.0.0 <3.0.0",
+    "path-to-regexp": ">=2.0.0 <3.0.0"
   },
   "devDependencies": {
     "eslint": "^5.10.0",
