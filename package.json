@@ -1,6 +1,6 @@
 {
   "name": "@everestate/serverless-router-aws",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Serverless Router plugin to handle http, streaming and other events at AWS λ",
   "keywords": [
     "serverless",
