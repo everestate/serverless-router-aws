@@ -1,11 +1,11 @@
-# @everestate/serverless-router-plugin-dynamodb
+# @everestate/serverless-router-aws
 
 > [Serverless Router](https://github.com/everestate/serverless-router) plugin to handle http, streaming and other events at AWS λ
 
 ## Installation
 
 ```
-npm install @everestate/serverless-router @everestate/serverless-router-plugin-dynamodb --save
+npm install @everestate/serverless-router @everestate/serverless-router-aws --save
 ```
 
 ## Usage
