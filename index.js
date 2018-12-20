@@ -1,4 +1,7 @@
-const ServerlessRouterDynamoDBPlugin = require('./lib/ServerlessRouterDynamoDBPlugin');
+const DynamoDB = require('./lib/DynamoDB');
+const Http = require('./lib/Http');
 
-
-module.exports = ServerlessRouterDynamoDBPlugin;
+module.exports = {
+  DynamoDB,
+  Http,
+};

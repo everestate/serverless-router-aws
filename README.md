@@ -1,58 +1,49 @@
-# @everestate/serverless-router-plugin-dynamodb
+# @everestate/serverless-router-aws
 
-> [Serverless Router](https://github.com/everestate/serverless-router) plugin to handle AWS DynamoDB stream events
+> [Serverless Router](https://github.com/everestate/serverless-router) plugin to handle http, streaming and other events at AWS λ
 
 ## Installation
 
 ```
-npm install @everestate/serverless-router @everestate/serverless-router-plugin-dynamodb --save
+npm install @everestate/serverless-router @everestate/serverless-router-aws --save
 ```
 
-## Usage
+## Supported events / services
+
+#### [DynamoDB](./docs/DynamoDB.md)
+
+Steaming events from AWS DynamoDB.
 
 ```javascript
-const ServerlessRouter = require('@everestate/serverless-router');
-const ServerlessRouterDynamoDBPlugin = require('@everestate/serverless-router-plugin-dynamodb');
-
-const unitService = require('../services/unitService');
-
-function dispatch(event) {
-  const router = new ServerlessRouter([ServerlessRouterDynamoDBPlugin]);
-
-  router.dynamodb
-    .insert(process.env.UNIT_TABLE_STREAM_ARN, ({ newItem }) => {
-      console.log(`Unit "${newItem.id} is created"`);
-      return unitService.create(newItem); // returns promise
-    })
-    .modify(process.env.UNIT_TABLE_STREAM_ARN, ({ newItem }) => {
-      console.log(`Unit "${newItem.id} is updated"`);
-      return unitService.update(newItem); // returns promise
-    })
-    .remove(process.env.UNIT_TABLE_STREAM_ARN, ({ oldItem }) => {
-      console.log(`Unit "${oldItem.id} is removed"`);
-      return unitService.remove(oldItem.id); // returns promise
-    });
-
-  router.mismatch(() => {
-    const { eventName, eventSourceARN } = event.Records[0];
-    return Promise.reject(new Error(`Unknown route: ${eventName} ${eventSourceARN}`));
-  });
-
-  return router.dispatch(event);
-}
-
-function myLambdaHandler(event, context, callback) {
-  return dispatch(event)
-    .then(() => callback(null, 'ok'))
-    .catch(error => callback(error));
-}
+const FOOBAR_TABLE_STREAM_ARN = 'arn:aws:dynamodb:us-west-2:111122223333:table/FooTable/stream/2015-05-11T21:21:33.291';
+router.dynamodb
+    .insert(FOOBAR_TABLE_STREAM_ARN, (ctx, _event) =>
+    console.log(`New Foobar record in inserted "${ctx.newItem}"`));
 ```
 
-Each matching callback gets first argument with `keys`, `newItem` and/or `oldItem` keys (depends of event type and stream view type).
-Each of them could be either `null` or object with the data to consume. Data is already translated from typed into plain object.
+**`ctx`** routing context, it's content dependent on event type
+**`event`** API gateway event, same as **`dispatch`** receives
 
-By default `serveless-router` will throw `error` on route mismatch.
-It's possible to define [custom behaviour on mismatch](https://github.com/everestate/serverless-router#when-route-is-mismatched).
+DynamoDB adapter implements `insert`, `modify` and `remove` methods.
+See the documentation for more details: [docs/DynamoDB.md](./docs/DynamoDB.md)
+
+#### [Http](./docs/Http.md)
+
+HTTP Events from AWS API Gateway.
+
+```javascript
+router.http
+    .get('/users/:id', (ctx, event) =>
+    console.log(`get user by id "${event.pathParameters.id}"`))
+    .post('/users', (ctx, event) =>
+    console.log(`create new user with attributes "${event.body}"`));
+```
+
+**`ctx`** routing context, currently it's always an empty object
+**`event`** API gateway event, same as **`dispatch`** receives
+
+Http adapter implements `get`, `post`, `patch`, `put`, `delete` and `all` methods.
+See the documentation for more details: [docs/Http.md](./docs/Http.md)
 
 ## License
 
