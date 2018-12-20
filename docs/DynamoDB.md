@@ -1,4 +1,4 @@
-Steaming events from AWS DynamoDB.
+#### Route steaming events from AWS DynamoDB.
 
 Supported methods
     * `insert`

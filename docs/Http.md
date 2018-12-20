@@ -1,4 +1,4 @@
-Events from AWS API Gateway.
+#### Route events from AWS API Gateway.
 
 If you familiar with routing principals from [sinatra](https://github.com/sinatra/sinatra),
 [express](https://github.com/expressjs/express) or similar framework, you got it.
