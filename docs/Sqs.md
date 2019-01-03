@@ -1,11 +1,11 @@
 #### Route streaming events from AWS Sqs.
 
 Supported events
-    * `insert`
+    * `message`: receive an event from AWS Sqs
 
 ```javascript
 router.sqs
-    .insert(myQueueStreamARN, (ctx, event) => null);
+    .message(myQueueStreamARN, (ctx, event) => null);
 ```
 
 Each matching callback gets first argument with `messageAttributes` and `body` keys.
