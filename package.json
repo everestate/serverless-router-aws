@@ -9,6 +9,8 @@
     "router",
     "route",
     "dynamodb",
+    "http",
+    "sqs",
     "streaming"
   ],
   "main": "index.js",
@@ -22,10 +24,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:everestate/serverless-router-plugin-dynamodb.git"
+    "url": "git@github.com:everestate/serverless-router-aws.git"
   },
   "bugs": {
-    "url": "https://github.com/everestate/serverless-router-plugin-dynamodb/issues"
+    "url": "https://github.com/everestate/serverless-router-aws/issues"
   },
   "author": "Everestate",
   "license": "MIT",
