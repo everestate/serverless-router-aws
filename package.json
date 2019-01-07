@@ -31,13 +31,16 @@
   },
   "author": "Everestate",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@everestate/serverless-router": ">=0.3.0",
     "aws-sdk": ">=2.0.0 <3.0.0",
     "path-to-regexp": ">=2.0.0 <3.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.10.0",
+    "eslint": "^5.11.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.1.2",

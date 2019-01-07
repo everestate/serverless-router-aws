@@ -21,8 +21,9 @@ router.dynamodb
     console.log(`New Foobar record inserted "${ctx.newItem}"`));
 ```
 
-**`ctx`** routing context, it's content dependent on event type
-**`event`** API gateway event, same as **`dispatch`** receives
+**`ctx`** - routing context, it's content dependent on event type
+
+**`event`** - API gateway event, same as **`dispatch`** receives
 
 DynamoDB adapter implements `insert`, `modify` and `remove` methods.
 See the documentation for more details: [docs/DynamoDB.md](./docs/DynamoDB.md)
@@ -39,8 +40,9 @@ router.http
     console.log(`create new user with attributes "${event.body}"`));
 ```
 
-**`ctx`** routing context, currently it's always an empty object
-**`event`** API gateway event, same as **`dispatch`** receives
+**`ctx`** - routing context, currently it's always an empty object
+
+**`event`** - API gateway event, same as **`dispatch`** receives
 
 Http adapter implements `get`, `post`, `patch`, `put`, `delete` and `all` methods.
 See the documentation for more details: [docs/Http.md](./docs/Http.md)
