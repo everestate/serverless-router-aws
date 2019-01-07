@@ -1,4 +1,4 @@
-# @everestate/serverless-router-aws
+# @everestate/serverless-router-aws [![npm version](https://badge.fury.io/js/%40everestate%2Fserverless-router-aws.svg)](https://www.npmjs.com/package/@everestate/serverless-router-aws)
 
 > [Serverless Router](https://github.com/everestate/serverless-router) plugin to handle http, streaming and other events at AWS λ
 
