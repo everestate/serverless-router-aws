@@ -18,7 +18,7 @@ Steaming events from AWS DynamoDB.
 const FOOBAR_TABLE_STREAM_ARN = 'arn:aws:dynamodb:us-west-2:111122223333:table/FooTable/stream/2015-05-11T21:21:33.291';
 router.dynamodb
     .insert(FOOBAR_TABLE_STREAM_ARN, (ctx, _event) =>
-    console.log(`New Foobar record in inserted "${ctx.newItem}"`));
+    console.log(`New Foobar record inserted "${ctx.newItem}"`));
 ```
 
 **`ctx`** - routing context, it's content dependent on event type

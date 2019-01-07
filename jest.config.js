@@ -11,5 +11,6 @@ module.exports = {
   testPathIgnorePatterns: [
     '/node_modules/',
     'lib/DynamoDB/__tests__/__fixtures__/',
+    'lib/Sqs/__tests__/__fixtures__/',
   ],
 };
