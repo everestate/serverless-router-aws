@@ -28,7 +28,7 @@ router.dynamodb
 DynamoDB adapter implements `insert`, `modify` and `remove` methods.
 See the documentation for more details: [docs/DynamoDB.md](./docs/DynamoDB.md)
 
-#### [Http](./docs/Http.md)
+#### [HTTP](./docs/HTTP.md)
 
 HTTP Events from AWS API Gateway.
 
@@ -44,8 +44,8 @@ router.http
 
 **`event`** - API gateway event, same as **`dispatch`** receives
 
-Http adapter implements `get`, `post`, `patch`, `put`, `delete` and `all` methods.
-See the documentation for more details: [docs/Http.md](./docs/Http.md)
+HTTP adapter implements `get`, `post`, `patch`, `put`, `delete` and `all` methods.
+See the documentation for more details: [docs/HTTP.md](./docs/HTTP.md)
 
 ## License
 

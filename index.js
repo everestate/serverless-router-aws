@@ -1,9 +1,9 @@
 const DynamoDB = require('./lib/DynamoDB');
-const Sqs = require('./lib/Sqs');
-const Http = require('./lib/Http');
+const SQS = require('./lib/SQS');
+const HTTP = require('./lib/HTTP');
 
 module.exports = {
   DynamoDB,
-  Http,
-  Sqs,
+  HTTP,
+  SQS,
 };
