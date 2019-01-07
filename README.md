@@ -47,6 +47,26 @@ router.http
 HTTP adapter implements `get`, `post`, `patch`, `put`, `delete` and `all` methods.
 See the documentation for more details: [docs/HTTP.md](./docs/HTTP.md)
 
+
+#### [SQS](./docs/SQS.md)
+
+Steaming events from AWS SQS.
+
+```javascript
+const FOOBAR_QUEUE_STREAM_ARN = 'arn:aws:sqs:us-west-2:594035263019:FOOBARQUEUE';
+router.sqs
+    .messgage(FOOBAR_TABLE_STREAM_ARN, (ctx, _event) =>
+    console.log(`New nessage received"${ctx.messageAttribtues}"`));
+```
+
+**`ctx`** - routing context, it contains the event payload
+
+**`event`** - message gateway event, same as **`dispatch`** receives
+
+SQS adapter implements `message` method.
+See the documentation for more details: [docs/SQS.md](./docs/SQS.md)
+
+
 ## License
 
 [MIT](./LICENSE)
