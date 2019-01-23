@@ -19,6 +19,6 @@ router.dynamodb
 
 **`path`** - HTTP path, powered by [path-to-regexp](https://github.com/pillarjs/path-to-regexp)
 
-**`ctx`** - routing context, currently it's always an empty object
+**`ctx`** - routing context, object which contains path parameters (regexp tokens)
 
 **`event`** - API gateway event, same as **`dispatch`** receives
