@@ -35,12 +35,12 @@ HTTP Events from AWS API Gateway.
 ```javascript
 router.http
     .get('/users/:id', (ctx, event) =>
-    console.log(`get user by id "${event.pathParameters.id}"`))
+    console.log(`get user by id "${ctx.id}"`))
     .post('/users', (ctx, event) =>
     console.log(`create new user with attributes "${event.body}"`));
 ```
 
-**`ctx`** - routing context, currently it's always an empty object
+**`ctx`** - routing context, object which contains path parameters (regexp tokens)
 
 **`event`** - API gateway event, same as **`dispatch`** receives
 
